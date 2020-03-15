@@ -38,6 +38,9 @@ class ExtendThread {
     MyThread4 mt = new MyThread4("Child #1");
     mt.start();
 
+    // Alternatively use the following
+    //MyThread4 mt = MyThread4.createAndStart("Child #1");
+
     for(int i=0; i<50; i++) {
       System.out.print(".");
       try { Thread.sleep(100); }
