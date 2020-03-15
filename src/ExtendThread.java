@@ -9,6 +9,13 @@ class MyThread4 extends Thread {
     super(name);  // name thread
   }
 
+  // Factory method
+  public static MyThread4 createAndStart(String name) {
+    MyThread4 myThrd = new MyThread4(name);
+    myThrd.start();
+    return myThrd;
+  }
+
   // Entry point of thread.
   public void run() {
     System.out.println(getName() + " starting.");
