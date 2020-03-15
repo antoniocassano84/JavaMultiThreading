@@ -4,7 +4,7 @@ class UseThreads2 {
         String mainT = Thread.currentThread().getName();
         System.out.println(">>> " + mainT + " thread starting.");
 
-        (new Thread( () -> { // This is the new Thread
+        new Thread( () -> { // This is the new Thread
             String thrdName = "Child #1";
             System.out.println("\t >>> " + thrdName + " starting.");
             try {
@@ -15,7 +15,7 @@ class UseThreads2 {
             } catch (InterruptedException exc) { System.out.println(thrdName + " interrupted."); }
             System.out.println("\t >>> " + thrdName + " terminating.");
         } // End Child Thread
-        )).start();
+        ).start();
 
         for(int i=0; i<50; i++) {
             System.out.println(mainT + " thread: pass #" + i);
