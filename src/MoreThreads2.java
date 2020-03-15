@@ -10,8 +10,8 @@ class MyThread6 implements Runnable {
   }
 
   // A factory method that creates and starts a thread.
-  public static MyThread6 createAndStart(String name) {
-    MyThread6 myThrd = new MyThread6(name);
+  public static MyThread7 createAndStart(String name) {
+    MyThread7 myThrd = new MyThread7(name);
     myThrd.thrd.start();  // start the Thread
     return  myThrd;
   }
@@ -36,9 +36,9 @@ class MoreThreads2 {
   public static void main(String[] args) {
     System.out.println("Main thread starting.");
 
-    MyThread6 mt1 = MyThread6.createAndStart("Child #1");
-    MyThread6 mt2 = MyThread6.createAndStart("Child #2");
-    MyThread6 mt3 = MyThread6.createAndStart("Child #3");
+    MyThread7 mt1 = MyThread7.createAndStart("Child #1");
+    MyThread7 mt2 = MyThread7.createAndStart("Child #2");
+    MyThread7 mt3 = MyThread7.createAndStart("Child #3");
 
     do {  // this waits until all threads terminate.
       System.out.print(".");

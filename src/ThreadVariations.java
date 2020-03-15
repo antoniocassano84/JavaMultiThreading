@@ -14,8 +14,8 @@ class MyThread3 implements Runnable {
     }
 
     // A factory method that creates and starts a thread.
-    public static MyThread6 createAndStart(String name) {
-        MyThread6 myThrd = new MyThread6(name);
+    public static MyThread7 createAndStart(String name) {
+        MyThread7 myThrd = new MyThread7(name);
         myThrd.thrd.start();  // start the Thread
         return  myThrd;
     }
@@ -41,7 +41,7 @@ class ThreadVariations {
         System.out.println("Main thread starting.");
 
         // Create and start a thread.
-        MyThread6 mt = MyThread6.createAndStart("Child #1");
+        MyThread7 mt = MyThread7.createAndStart("Child #1");
 
         for(int i=0; i<50; i++) {
             System.out.print(".");

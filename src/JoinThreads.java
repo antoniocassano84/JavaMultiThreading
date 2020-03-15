@@ -1,11 +1,11 @@
-// Create multiple threads.
+// Use join().
 
-class MyThread5 implements Runnable {
+class MyThread7 implements Runnable {
   Thread thrd;
 
   // Construct a new thread using this Runnable
   // and give it a name.
-  MyThread5(String name) {
+  MyThread7(String name) {
     thrd = new Thread(this, name);
   }
 
@@ -31,7 +31,8 @@ class MyThread5 implements Runnable {
   }
 }
 
-class MoreThreads {
+// Use join()
+class JoinThreads {
   public static void main(String[] args) {
     System.out.println("Main thread starting.");
 
@@ -39,10 +40,15 @@ class MoreThreads {
     MyThread7 mt2 = MyThread7.createAndStart("Child #2");
     MyThread7 mt3 = MyThread7.createAndStart("Child #3");
 
-    for(int i=0; i<50; i++) {
-      System.out.print(".");
-      try { Thread.sleep(100); }
-      catch(InterruptedException exc) { System.out.println("Main thread interrupted."); }
+    try {
+      mt1.thrd.join();
+      System.out.println("Child #1 joined.");
+      mt2.thrd.join();
+      System.out.println("Child #2 joined.");
+      mt3.thrd.join();
+      System.out.println("Child #3 joined.");
+    } catch(InterruptedException exc) {
+      System.out.println("Main thread interrupted.");
     }
     System.out.println("Main thread ending.");
   }
